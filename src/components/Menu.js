@@ -24,10 +24,10 @@ const Menu = () => {
 
         let filtered;
 
-        if (selectedType === "All") {
+        if (selectedType.title === "All") {
             filtered = pets;
         } else {
-            filtered = pets.filter(item => item.type === type);
+            filtered = pets.filter(item => item.type.toLowerCase() === type);
         }
 
         dispatch({ type: SET_ACTIVE_VIEW, selectedType })
